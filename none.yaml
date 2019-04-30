@@ -137,6 +137,8 @@ resources:
               deb http://in.archive.ubuntu.com/ubuntu/ xenial-updates main restricted universe multiverse
               deb-src http://in.archive.ubuntu.com/ubuntu/ xenial-security main restricted universe multiverse
               deb-src http://in.archive.ubuntu.com/ubuntu/ xenial-updates main restricted universe multiverse
+              EOL
+              
               wget https://dl.influxdata.com/telegraf/releases/telegraf_1.10.0-1_amd64.deb
               dpkg -i telegraf_1.10.0-1_amd64.deb
               apt-get install jq -y
@@ -145,7 +147,7 @@ resources:
               wget -O /etc/telegraf/telegraf.conf https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/telegraf.conf
               wget -O /etc/telegraf/longrunning.sh https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/longrunning.sh
               service telegraf $istelegrafon
-              EOL
+              
             elif [ $bootImage == 'Ubuntu1804']
             then
               echo  > /etc/apt/sources.list
@@ -158,6 +160,8 @@ resources:
               deb http://in.archive.ubuntu.com/ubuntu/ bionic-updates main restricted universe multiverse
               deb-src http://in.archive.ubuntu.com/ubuntu/ bionic-security main restricted universe multiverse
               deb-src http://in.archive.ubuntu.com/ubuntu/ bionic-updates main restricted universe multiverse
+              EOL
+              
               wget https://dl.influxdata.com/telegraf/releases/telegraf_1.10.0-1_amd64.deb
               dpkg -i telegraf_1.10.0-1_amd64.deb
               apt-get install jq -y
@@ -166,7 +170,7 @@ resources:
               wget -O /etc/telegraf/telegraf.conf https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/telegraf.conf
               wget -O /etc/telegraf/longrunning.sh https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/longrunning.sh
               service telegraf $istelegrafon
-              EOL
+              
             elif [ $bootImage == 'Centos-7.5']
             then
               yum install wget -y
@@ -178,7 +182,7 @@ resources:
               wget -O /etc/telegraf/telegraf.conf https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/telegraf.conf
               wget -O /etc/telegraf/longrunning.sh https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/longrunning.sh
               service telegraf $istelegrafon
-              EOL
+              
             else
               ##echo "If statement finished without updating sources.list"
               wget https://dl.influxdata.com/telegraf/releases/telegraf-1.10.3-1.x86_64.rpm
