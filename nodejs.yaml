@@ -1,6 +1,7 @@
 heat_template_version: 2013-05-23
 description: >
   creating nodejs stack 
+
 parameters:
   key:
     type: string
