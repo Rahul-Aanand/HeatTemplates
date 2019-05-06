@@ -42,9 +42,6 @@ parameters:
     type: string
     description: name of the bootable volume
     
-  serverName:
-    type: string
-    description: name of the instance
   
   volumeSize:
     type: number
@@ -54,7 +51,8 @@ parameters:
     default: Ubuntu1604
   proxy_ip:
     type: string
-    default: http://10.144.106.132:8678
+    default: http://10.157.240.254:8678
+
   istelegrafon:
     type: string
     default: restart
@@ -115,7 +113,6 @@ resources:
   server:
     type: OS::Nova::Server
     properties:
-      name: { get_param: serverName }
       availability_zone: { get_param: vmAvailabilityZone }
       key_name: { get_param: key }
       flavor: { get_param: flavor}
@@ -174,7 +171,6 @@ resources:
           params:
             $proxy: { get_param: proxy_ip }
             $istelegrafon : { get_param: istelegrafon }
-
 
 
 

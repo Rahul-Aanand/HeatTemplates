@@ -56,9 +56,11 @@ parameters:
   istelegrafon:
     type: string
     default: restart
+
   isprodvm:
     type: string
     default:non-prod  
+
 
 resources:
   security_group:
@@ -125,6 +127,7 @@ resources:
             export https_proxy=$proxy
             echo "export http_proxy=$proxy" >> /etc/profile.d/proxy.sh
             echo "export https_proxy=$proxy" >> /etc/profile.d/proxy.sh
+
             # Update sources.list based on bootImage
             if [ $bootImage = "Ubuntu1604" ]
             then
@@ -195,6 +198,7 @@ resources:
             $proxy: { get_param: proxy_ip }
             $istelegrafon : { get_param: istelegrafon }
             $bootImage: { get_param: bootImage }
+
 
   server_floating_ip:
     type: OS::Nova::FloatingIP
