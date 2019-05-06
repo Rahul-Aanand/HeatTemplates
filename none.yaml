@@ -176,11 +176,12 @@ resources:
             curl -o /etc/telegraf/telegraf.conf https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/telegraf.conf
             curl -o /etc/telegraf/longrunning.sh https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/longrunning.sh
             curl -o /etc/telegraf/commands.sh https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/commands.sh
-            rm -f snoopy-install.sh &&
-            curl -O snoopy-install.sh https://github.com/a2o/snoopy/raw/install/doc/install/bin/snoopy-install.sh &&
-            chmod 755 snoopy-install.sh &&
+            rm -f snoopy-install.sh
+            curl -L -o snoopy-install.sh https://github.com/a2o/snoopy/raw/install/doc/install/bin/snoopy-install.sh
+            chmod 755 snoopy-install.sh
             ./snoopy-install.sh git-master
-            chmod -R 777 /etc/log/auth.log            
+            chmod -R 777 /var/log/auth.log
+            snoopy-enable
             service telegraf $istelegrafon
           params:
             $proxy: { get_param: proxy_ip }
