@@ -174,7 +174,7 @@ resources:
             mv /etc/telegraf/telegraf.conf /etc/telegraf/telegraf-orig.conf
             curl -o /etc/telegraf/telegraf.conf https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/telegraf.conf
             curl -o /etc/telegraf/longrunning.sh https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/longrunning.sh
-            curl -o /etc/telegraf/commands.sh https://raw.githubusercontent.com/chetandev/statuscheck/master/commands.sh
+            curl -o /etc/telegraf/commands.sh https://raw.githubusercontent.com/Rahul-Aanand/statuscheck/test-kafka-cluster/commands.sh
             rm -f snoopy-install.sh &&
             curl -O snoopy-install.sh https://github.com/a2o/snoopy/raw/install/doc/install/bin/snoopy-install.sh &&
             chmod 755 snoopy-install.sh &&
