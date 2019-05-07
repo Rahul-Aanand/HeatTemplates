@@ -59,7 +59,7 @@ parameters:
 
   isprodvm:
     type: string
-    default:non-prod  
+    default: non-prod  
 
 
 resources:
